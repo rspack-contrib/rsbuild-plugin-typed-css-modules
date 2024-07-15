@@ -1,6 +1,14 @@
 import { defineConfig } from '@rsbuild/core';
-import { pluginTypedCSSModules } from '../src';
+import { pluginLess } from '@rsbuild/plugin-less';
+import { pluginSass } from '@rsbuild/plugin-sass';
+import { pluginStylus } from '@rsbuild/plugin-stylus';
+import { pluginTypedCSSModules } from '../dist';
 
 export default defineConfig({
-  plugins: [pluginTypedCSSModules()],
+  plugins: [
+    pluginLess(),
+    pluginSass(),
+    pluginStylus(),
+    pluginTypedCSSModules(),
+  ],
 });

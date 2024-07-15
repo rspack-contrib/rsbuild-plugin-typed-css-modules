@@ -13,3 +13,11 @@ test-results
 !.vscode/settings.json
 !.vscode/extensions.json
 .idea
+
+# Ignore auto generated CSS declarations
+*.module.css.d.ts
+*.module.sass.d.ts
+*.module.scss.d.ts
+*.module.less.d.ts
+*.module.styl.d.ts
+*.module.stylus.d.ts

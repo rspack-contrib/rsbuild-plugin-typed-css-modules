@@ -1,8 +1,5 @@
-import './index.css';
-
-document.querySelector('#root').innerHTML = `
-<div class="content">
-  <h1>Vanilla Rsbuild</h1>
-  <p>Start building amazing things with Rsbuild.</p>
-</div>
-`;
+import './a.css';
+import './b.module.scss';
+import './c.module.less';
+import './d.global.less';
+import './e.module.styl';
