@@ -36,10 +36,10 @@
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@playwright/test": "^1.45.3",
-    "@rsbuild/core": "^1.0.1-beta.9",
-    "@rsbuild/plugin-less": "^1.0.1-beta.9",
-    "@rsbuild/plugin-sass": "^1.0.1-beta.9",
-    "@rsbuild/plugin-stylus": "^1.0.1-beta.9",
+    "@rsbuild/core": "^1.0.1-beta.10",
+    "@rsbuild/plugin-less": "^1.0.1-beta.10",
+    "@rsbuild/plugin-sass": "^1.0.1-beta.10",
+    "@rsbuild/plugin-stylus": "^1.0.1-beta.10",
     "@types/node": "^20.14.14",
     "line-diff": "2.1.1",
     "nano-staged": "^0.8.0",
@@ -49,7 +49,7 @@
     "typescript": "^5.5.4"
   },
   "peerDependencies": {
-    "@rsbuild/core": "1.x"
+    "@rsbuild/core": "1.x || ^1.0.1-beta.0"
   },
   "peerDependenciesMeta": {
     "@rsbuild/core": {
