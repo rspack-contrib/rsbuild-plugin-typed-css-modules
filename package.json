@@ -41,7 +41,7 @@
     "@rsbuild/plugin-less": "^1.1.0",
     "@rsbuild/plugin-sass": "^1.1.0",
     "@rsbuild/plugin-stylus": "^1.0.5",
-    "@types/node": "^20.17.5",
+    "@types/node": "^22.8.6",
     "line-diff": "2.1.1",
     "nano-staged": "^0.8.0",
     "playwright": "^1.48.2",
