@@ -1,7 +1,9 @@
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { CSSLoaderOptions, RsbuildPlugin } from '@rsbuild/core';
 
 export const PLUGIN_TYPED_CSS_MODULES_NAME = 'rsbuild:typed-css-modules';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const pluginTypedCSSModules = (): RsbuildPlugin => ({
   name: PLUGIN_TYPED_CSS_MODULES_NAME,
