@@ -12,7 +12,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { CSSModules, Rspack } from '@rsbuild/core';
-// @ts-expect-error missing type declaration
 import LineDiff from 'line-diff';
 
 export type CssLoaderModules =
@@ -83,7 +82,7 @@ const getTypeMismatchError = ({
   actual: string;
 }) => {
   const diff = new LineDiff(
-    enforceLFLineSeparators(actual),
+    enforceLFLineSeparators(actual) || '',
     expected,
   ).toString();
 
