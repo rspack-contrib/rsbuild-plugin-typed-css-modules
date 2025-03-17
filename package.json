@@ -39,6 +39,7 @@
     "@rsbuild/plugin-less": "^1.1.1",
     "@rsbuild/plugin-sass": "^1.2.2",
     "@rsbuild/plugin-stylus": "^1.0.8",
+    "@rsbuild/plugin-type-check": "^1.2.1",
     "@rslib/core": "^0.5.2",
     "@types/node": "^22.13.8",
     "line-diff": "2.1.2",
