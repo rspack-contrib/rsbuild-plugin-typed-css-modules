@@ -35,13 +35,13 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@playwright/test": "^1.52.0",
-    "@rsbuild/core": "^1.3.14",
-    "@rsbuild/plugin-less": "^1.2.2",
+    "@rsbuild/core": "^1.3.22",
+    "@rsbuild/plugin-less": "^1.2.4",
     "@rsbuild/plugin-sass": "^1.3.1",
     "@rsbuild/plugin-stylus": "^1.1.1",
-    "@rsbuild/plugin-type-check": "^1.2.1",
-    "@rslib/core": "^0.6.8",
-    "@types/node": "^22.15.3",
+    "@rsbuild/plugin-type-check": "^1.2.2",
+    "@rslib/core": "^0.9.1",
+    "@types/node": "^22.15.29",
     "line-diff": "2.1.2",
     "nano-staged": "^0.8.0",
     "playwright": "^1.52.0",
@@ -56,7 +56,7 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
