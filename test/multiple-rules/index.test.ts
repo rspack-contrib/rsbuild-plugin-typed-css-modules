@@ -5,7 +5,6 @@ import { expect, test } from '@playwright/test';
 import { createRsbuild } from '@rsbuild/core';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginSass } from '@rsbuild/plugin-sass';
-import { pluginStylus } from '@rsbuild/plugin-stylus';
 import { pluginTypedCSSModules } from '../../dist';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
