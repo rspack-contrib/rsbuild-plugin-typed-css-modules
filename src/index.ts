@@ -13,12 +13,20 @@ export const pluginTypedCSSModules = (): RsbuildPlugin => ({
       order: 'post',
       handler: async (chain, { target, CHAIN_ID }) => {
         if (target === 'web') {
-          const ruleIds = [
+          const ruleIds: string[] = [
             CHAIN_ID.RULE.CSS,
             CHAIN_ID.RULE.SASS,
             CHAIN_ID.RULE.LESS,
             CHAIN_ID.RULE.STYLUS,
           ];
+
+          for (const ruleId of ruleIds) {
+            let index = 1;
+            while (chain.module.rules.has(`${ruleId}-${index}`)) {
+              ruleIds.push(`${ruleId}-${index}`);
+              index++;
+            }
+          }
 
           for (const ruleId of ruleIds) {
             if (!chain.module.rules.has(ruleId)) {
