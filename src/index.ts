@@ -52,7 +52,7 @@ export const pluginTypedCSSModules = (): RsbuildPlugin => ({
             }
 
             rule
-              .use(CHAIN_ID.USE.CSS_MODULES_TS)
+              .use('css-modules-typescript')
               .loader(path.resolve(__dirname, './loader.cjs'))
               .options({
                 modules: cssLoaderOptions.modules,
