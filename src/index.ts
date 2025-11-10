@@ -5,7 +5,20 @@ import type { CSSLoaderOptions, RsbuildPlugin } from '@rsbuild/core';
 export const PLUGIN_TYPED_CSS_MODULES_NAME = 'rsbuild:typed-css-modules';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export const pluginTypedCSSModules = (): RsbuildPlugin => ({
+export type PluginOptions = {
+  /**
+   * When enabled, the generated type definition will include an index signature (`[key: string]: string`).
+   * This allows you to reference any class name without TypeScript errors, while still keeping autocomplete
+   * and type hints for existing class names. It’s useful if you only need editor IntelliSense and don't require
+   * strict type checking for CSS module exports.
+   * @default false
+   */
+  looseTyping?: boolean;
+};
+
+export const pluginTypedCSSModules = (
+  options: PluginOptions = {},
+): RsbuildPlugin => ({
   name: PLUGIN_TYPED_CSS_MODULES_NAME,
 
   setup(api) {
@@ -56,6 +69,7 @@ export const pluginTypedCSSModules = (): RsbuildPlugin => ({
               .loader(path.resolve(__dirname, './loader.cjs'))
               .options({
                 modules: cssLoaderOptions.modules,
+                looseTyping: options.looseTyping,
               })
               .before(CHAIN_ID.USE.CSS);
           }
