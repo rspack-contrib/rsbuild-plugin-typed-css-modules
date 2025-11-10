@@ -5,20 +5,14 @@ import { expect, test } from '@playwright/test';
 import { createRsbuild } from '@rsbuild/core';
 import { pluginSass } from '@rsbuild/plugin-sass';
 import { pluginTypedCSSModules } from '../../dist';
+import { generatorTempDir } from '../helper';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fixtures = __dirname;
 
-const generatorTempDir = async (testDir: string) => {
-  fs.rmSync(testDir, { recursive: true, force: true });
-  await fs.promises.cp(join(fixtures, 'src'), testDir, { recursive: true });
-
-  return () => fs.promises.rm(testDir, { force: true, recursive: true });
-};
-
 test('generator TS declaration with loose typing', async () => {
   const testDir = join(fixtures, 'test-temp-src-1');
-  const clear = await generatorTempDir(testDir);
+  const clear = await generatorTempDir(__dirname, testDir);
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,

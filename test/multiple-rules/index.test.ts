@@ -6,19 +6,13 @@ import { createRsbuild } from '@rsbuild/core';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginSass } from '@rsbuild/plugin-sass';
 import { pluginTypedCSSModules } from '../../dist';
+import { generatorTempDir } from '../helper';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const generatorTempDir = async (testDir: string) => {
-  fs.rmSync(testDir, { recursive: true, force: true });
-  await fs.promises.cp(join(__dirname, 'src'), testDir, { recursive: true });
-
-  return () => fs.promises.rm(testDir, { force: true, recursive: true });
-};
-
 test('generator TS declaration for multiple Less or Sass plugins', async () => {
   const testDir = join(__dirname, 'test-temp-src-1');
-  const clear = await generatorTempDir(testDir);
+  const clear = await generatorTempDir(__dirname, testDir);
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,

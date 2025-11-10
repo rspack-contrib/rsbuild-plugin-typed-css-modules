@@ -7,19 +7,13 @@ import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginSass } from '@rsbuild/plugin-sass';
 import { pluginStylus } from '@rsbuild/plugin-stylus';
 import { pluginTypedCSSModules } from '../../dist';
+import { generatorTempDir } from '../helper';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const generatorTempDir = async (testDir: string) => {
-  fs.rmSync(testDir, { recursive: true, force: true });
-  await fs.promises.cp(join(__dirname, 'src'), testDir, { recursive: true });
-
-  return () => fs.promises.rm(testDir, { force: true, recursive: true });
-};
-
 test('generator TS declaration for cssModules.auto true', async () => {
   const testDir = join(__dirname, 'test-temp-src-1');
-  const clear = await generatorTempDir(testDir);
+  const clear = await generatorTempDir(__dirname, testDir);
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
@@ -82,7 +76,7 @@ export default cssExports;
 
 test('generator TS declaration for cssModules.auto function', async () => {
   const testDir = join(__dirname, 'test-temp-src-2');
-  const clear = await generatorTempDir(testDir);
+  const clear = await generatorTempDir(__dirname, testDir);
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
@@ -118,7 +112,7 @@ test('generator TS declaration for cssModules.auto function', async () => {
 
 test('generator TS declaration for cssModules.auto Regexp', async () => {
   const testDir = join(__dirname, 'test-temp-src-3');
-  const clear = await generatorTempDir(testDir);
+  const clear = await generatorTempDir(__dirname, testDir);
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
@@ -152,7 +146,7 @@ test('generator TS declaration for cssModules.auto Regexp', async () => {
 
 test('generator TS declaration for `asIs` convention', async () => {
   const testDir = join(__dirname, 'test-temp-src-4');
-  const clear = await generatorTempDir(testDir);
+  const clear = await generatorTempDir(__dirname, testDir);
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
