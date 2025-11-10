@@ -17,7 +17,7 @@ test('generator TS declaration for namedExport true', async () => {
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
-    rsbuildConfig: {
+    config: {
       plugins: [pluginLess(), pluginSass(), pluginTypedCSSModules()],
       source: {
         entry: { index: resolve(testDir, 'index.js') },
@@ -69,7 +69,7 @@ test('generator TS declaration for namedExport true and `asIs` convention', asyn
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
-    rsbuildConfig: {
+    config: {
       plugins: [pluginLess(), pluginSass(), pluginTypedCSSModules()],
       source: {
         entry: { index: resolve(testDir, 'index.js') },

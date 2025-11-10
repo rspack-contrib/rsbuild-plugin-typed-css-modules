@@ -16,7 +16,7 @@ test('generator TS declaration with loose typing', async () => {
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
-    rsbuildConfig: {
+    config: {
       plugins: [
         pluginSass(),
         pluginTypedCSSModules({

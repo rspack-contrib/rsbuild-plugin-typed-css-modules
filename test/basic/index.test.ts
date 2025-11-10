@@ -17,7 +17,7 @@ test('generator TS declaration for cssModules.auto true', async () => {
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
-    rsbuildConfig: {
+    config: {
       plugins: [
         pluginLess(),
         pluginSass(),
@@ -80,7 +80,7 @@ test('generator TS declaration for cssModules.auto function', async () => {
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
-    rsbuildConfig: {
+    config: {
       plugins: [
         pluginLess(),
         pluginSass(),
@@ -116,7 +116,7 @@ test('generator TS declaration for cssModules.auto Regexp', async () => {
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
-    rsbuildConfig: {
+    config: {
       plugins: [
         pluginLess(),
         pluginSass(),
@@ -150,7 +150,7 @@ test('generator TS declaration for `asIs` convention', async () => {
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
-    rsbuildConfig: {
+    config: {
       plugins: [
         pluginLess(),
         pluginSass(),

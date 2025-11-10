@@ -16,7 +16,7 @@ test('generator TS declaration for multiple Less or Sass plugins', async () => {
 
   const rsbuild = await createRsbuild({
     cwd: __dirname,
-    rsbuildConfig: {
+    config: {
       plugins: [
         pluginSass({
           include: [/a\.module/],
