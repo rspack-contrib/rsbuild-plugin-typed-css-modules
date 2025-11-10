@@ -7,6 +7,7 @@ An Rsbuild plugin to generate TypeScript declaration files for CSS Modules.
    <img src="https://img.shields.io/npm/v/@rsbuild/plugin-typed-css-modules?style=flat-square&colorA=564341&colorB=EDED91" alt="npm version" />
   </a>
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="license" />
+  <a href="https://npmcharts.com/compare/@rsbuild/plugin-typed-css-modules?minimal=true"><img src="https://img.shields.io/npm/dm/@rsbuild/plugin-typed-css-modules.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="downloads" /></a>
 </p>
 
 ## Usage
